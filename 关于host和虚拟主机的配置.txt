@@ -1,0 +1,33 @@
+修改hosts文件
+以windows为例：
+ 打开C:\WINDOWS\system32\drivers\etc\hosts 添加下面数据行
+ 127.0.0.1  ci.me
+ 
+ -------------------------------
+ hosts文件文件后，要在apache的主配置文件httpd.conf中
+去掉  Include conf/extra/httpd-vhosts.conf 之前的#（作用是开启虚拟主机）  
+
+--------------------------------------
+添加虚拟主机
+windows(httpd-vhosts文件位置)：c:\wamp\bin\apache\apache2.2.22\conf\extra\httpd-vhosts.conf 添加下面数据行：
+<VirtualHost *:80>
+    ServerAdmin webmaster@dummy-host2.localhost
+    DocumentRoot "E:\ci"
+    ServerName  ci.me
+    Rewriteengine on 
+
+    
+
+    ErrorLog "logs/dummy-host2.localhost-error.log"
+    CustomLog "logs/dummy-host2.localhost-access.log" common
+<Directory "E:\ci">    
+    Options Indexes FollowSymLinks    
+    AllowOverride all
+    #   onlineoffline tag - don't remove
+    Order Deny,Allow
+    Allow from all         
+    </Directory>
+</VirtualHost>
+-----------------------------------------------------------
+重启 apache 
+使用 浏览器输入 http://ci.me  就可以访问到 E:/ci 里面的东西了
