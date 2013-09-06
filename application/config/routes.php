@@ -38,10 +38,7 @@
 |
 */
 
-$route['news/create'] = 'news/create';
-$route['news/(:any)'] = 'news/view/$1';
-$route['news'] = 'news';
-$route['(:any)'] = 'page/view/$1';
+
 $route['default_controller'] = 'page/view';  //设置默认的控制器和方法
 
 $route['404_override'] = '';

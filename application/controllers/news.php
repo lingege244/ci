@@ -6,7 +6,7 @@ class News extends CI_Controller{
 		$this->load->model('news_model');//加载对应的model
 	}
 	
-
+	
 	
 	function index(){
 		//echo APPPATH;exit; 结果输出  ：application/
@@ -70,9 +70,20 @@ class News extends CI_Controller{
 			alert("提交成功！");
 			//$this->load->view('news/success'); //加载一个显示成功信息的视图
 		}
-		
-		
-		
+
+	}
+	
+	function show(){
+		echo ENVIRONMENT.'<br>';  //其定义和作用在入口文件index.php里面有，为development时就开启E_ALL错误报告级别
+		echo EXT.'<br>';       //  可能是扩展名  比如.php
+		echo FCPATH.'<br>';    //   C:\AppServ\www\ci\  根目录？？
+		echo SELF.'<br>';      //   index.php
+		echo BASEPATH.'<br>';  //   C:/AppServ/www/ci/system/
+		echo APPPATH.'<br>';   //   application/
+		echo CI_VERSION.'<br>';//   2.1.4 CI版本  
+		echo FILE_READ_MODE.'<br>';  //    420
+		echo FILE_WRITE_MODE.'<br>'; //    438
+	
 		
 	}
 }
