@@ -14,4 +14,45 @@
 问题：如何删除 url中的index.php，在虚拟主机下又该如何解决？？
 ---------------------------------------
 
+	CI保留字（避免命名冲突）
 	
+控制器不能命名为 
+ Default   index
+	
+
+函数不能命名为   //  建议自定义的用驼峰式命名法
+is_really_writable()
+load_class()
+get_config()
+config_item()
+show_error()
+show_404()
+log_message()
+_exception_handler()
+get_instance() 
+
+变量不能命名为
+$config
+
+常量不能命名为
+ENVIRONMENT
+EXT
+FCPATH
+SELF
+BASEPATH
+APPPATH
+CI_VERSION
+FILE_READ_MODE
+FILE_WRITE_MODE
+DIR_READ_MODE
+DIR_WRITE_MODE
+FOPEN_READ
+FOPEN_READ_WRITE
+FOPEN_WRITE_CREATE_DESTRUCTIVE
+FOPEN_READ_WRITE_CREATE_DESTRUCTIVE
+FOPEN_WRITE_CREATE
+FOPEN_READ_WRITE_CREATE
+FOPEN_WRITE_CREATE_STRICT
+FOPEN_READ_WRITE_CREATE_STRICT
+
+

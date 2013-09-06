@@ -6,7 +6,11 @@ class News extends CI_Controller{
 		$this->load->model('news_model');//加载对应的model
 	}
 	
+
+	
 	function index(){
+		//echo APPPATH;exit; 结果输出  ：application/
+
 		$data['news']=$this->news_model->get_news();  //调用news_model类里面的get_news方法
 		$data['title']='Get News';
 		
