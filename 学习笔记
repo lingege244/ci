@@ -1,0 +1,17 @@
+一.CodeIgniter URL
+
+默认使用的是 path-info 模式
+举例：example.com/news/article/my_article
+其中：news代表控制器
+	article代表方法
+	my_article代表的不是变量名（与以往的不同，变量名在方法定义的时候在参数列表中给），而是变量值
+
+所涉及的知识：
+	URI类
+	URL辅助函数
+	URI路由
+
+问题：如何删除 url中的index.php，在虚拟主机下又该如何解决？？
+---------------------------------------
+
+	
