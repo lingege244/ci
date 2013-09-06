@@ -1,5 +1,5 @@
 <?php
-class News extends CI_Controller{
+class News extends CI_Controller{ //类名的首字母要大写！！  .........
 	
 	function __construct(){
 		parent::__construct();
@@ -62,7 +62,7 @@ class News extends CI_Controller{
 			//本方法加载表单验证函数，在设置完表单验证规则后会触发run()进行验证，run方法执行结果为false表明还没有东西提交过来并进行验证
 			//所以在此显示提交表单的模板
 			$this->load->view('templates/head',$data);
-			$this->load->view('news/create');
+			$this->load->view('news/create'); //注意：.php 文件的扩展名(后缀名)没有必要专门写出，除非你使用了其他的扩展名。
 			$this->load->view('templates/footer');
 			
 		}else{ //提交成功并且通过了验证
@@ -83,7 +83,17 @@ class News extends CI_Controller{
 		echo CI_VERSION.'<br>';//   2.1.4 CI版本  
 		echo FILE_READ_MODE.'<br>';  //    420
 		echo FILE_WRITE_MODE.'<br>'; //    438
+			
+	}
 	
+	function display(){ //在其模板中使用CI特有的php替代语法 （流程控制/输出...）
+		
+		$data['lists']=array("zhangsan","lisi","wangwu");
+		$data['title']="CI模板替代";
+		
+		$this->load->view('templates/head',$data); //貌似有多个模板输出的话，在第一个模板分配数据过去就行了
+		$this->load->view('news/display');
+		$this->load->view('templates/footer');
 		
 	}
 }
