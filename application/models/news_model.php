@@ -1,5 +1,6 @@
 <?php
-class News_model extends CI_Model{
+class News_model extends CI_Model{ //模型是专门用来和数据库打交道的PHP类
+	// CodeIgniter的开发规范：model类命名 ---- 控制器名_model  （注意首字母大写 并且继承CI_Model 基类）
 
 	function __construct(){
 		$this->load->database(); //加载数据库配置 
