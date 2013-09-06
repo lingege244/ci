@@ -38,7 +38,11 @@
 |
 */
 
-$route['default_controller'] = "Blog"; //默认控制器
+$route['news/create'] = 'news/create';
+$route['news/(:any)'] = 'news/view/$1';
+$route['news'] = 'news';
+$route['(:any)'] = 'page/view/$1';
+$route['default_controller'] = 'page/view';  //设置默认的控制器和方法
 //默认的方法为url
 $route['404_override'] = '';
 

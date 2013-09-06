@@ -562,3 +562,21 @@ if ( ! function_exists('html_escape'))
 
 /* End of file Common.php */
 /* Location: ./system/core/Common.php */
+if( ! function_exists('alert')){  //在该公共函数的定义文件中定义自己的函数
+function alert($msg='', $url='') { //模仿 js 弹窗输出指定信息以后跳转到指定页面
+	
+	header("Content-type: text/html; charset=utf-8");
+	$html = "<script type='text/javascript'>";
+	if ($msg) {
+		$html .= "alert('" . $msg . "');";
+	}
+	if (!$url) {
+		$html .= "history.back();";
+	} else {
+		$html .= "location.href='" . $url . "';";
+	}
+	$html .="</script>";
+	echo $html;
+	exit;
+}
+}
