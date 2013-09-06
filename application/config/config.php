@@ -57,7 +57,8 @@ $config['uri_protocol']	= 'AUTO';
 | http://codeigniter.com/user_guide/general/urls.html
 */
 
-$config['url_suffix'] = '';
+$config['url_suffix'] = '.php';  //为 CodeIgniter 生成的 URL 添加一个指定的文件后缀
+//http://ci.me/index.php/Blog/show.php
 
 /*
 |--------------------------------------------------------------------------
