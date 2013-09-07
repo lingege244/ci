@@ -62,4 +62,9 @@ http://www.anytime-anywhere.info/archives/category/web/codeigniter
 开始尝试去使用Active Record 类 
 http://codeigniter.org.cn/user_guide/database/active_record.html
 ---------------------------------------------------------------------------
+注意在eclipse中做好注释，包括作者和功能描述
+使用方法为 
+/**
+*
+*/
  
